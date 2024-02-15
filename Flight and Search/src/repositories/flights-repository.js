@@ -68,5 +68,25 @@ class FlightsRepository {
         return flight
 
     }
+   async  getFlightsById(id){
+    const flight = await Flights.findByPk(id)
+    return flight;
+   }
+   async updateFlight(id,data) {
+    try {
+        console.log(id,data);
+        const flight  = await Flights.findByPk(id)
+        if(data.totalSeats)
+        {
+            flight.totalSeats = data.totalSeats
+        }
+        await flight.save()
+        console.log(flight);
+        return flight
+    } catch (error) {
+
+    }
+
+}
 }
 module.exports = FlightsRepository

@@ -29,4 +29,30 @@ const getAllFlights = async (req, res) => {
     }
 
 }
-module.exports = { createFlight,getAllFlights }
+const updateFlight = async (req, res) => {
+    try {
+
+            console.log(req.params,req.body);
+        const flight = await flightService.updateFlight(req.params.id,req.body) 
+        res.status(201).json(flight);
+
+    } catch (error) {
+        // console.error('Error creating city:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+}
+const getFlightsById = async (req, res) => {
+    try {
+
+            console.log(req.params);
+        const flight = await flightService.getFlightsById(req.params.id) 
+        res.status(201).json(flight);
+
+    } catch (error) {
+        // console.error('Error creating city:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+}
+module.exports = { createFlight,getAllFlights,getFlightsById,updateFlight }

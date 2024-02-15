@@ -10,7 +10,7 @@ class AirportService {
       const Airport = await this.airportRepository.createAirport(data);
       return Airport;
     } catch (error) {
-      // Log the error or perform other error handling actions
+
       throw error;
     }
   }
@@ -20,7 +20,7 @@ class AirportService {
       const Airport = await this.airportRepository.UpdateAirport(id, data);
       return Airport;
     } catch (error) {
-      // Log the error or perform other error handling actions
+
       throw error;
     }
   }
@@ -30,7 +30,7 @@ class AirportService {
       const response = await this.airportRepository.deleteAirport(id);
       return response;
     } catch (error) {
-      // Log the error or perform other error handling actions
+
       throw error;
     }
   }
@@ -40,7 +40,7 @@ class AirportService {
       const Airport = await this.airportRepository.getAirport(AirportId);
       return Airport;
     } catch (error) {
-      // Log the error or perform other error handling actions
+
       throw error;
     }
   }
@@ -49,7 +49,7 @@ class AirportService {
       const Airport = await this.airportRepository.getallAirports(name)
       return Airport;
     } catch (error) {
-      // Log the error or perform other error handling actions
+
       throw error;
     }
   }

@@ -13,6 +13,8 @@ router.patch('/airport/:id',AirportController.updateAirport)
 router.get('/airport',AirportController.getAllAirport)
 router.post('/flights',FlightController.createFlight)
 router.get('/getflights',FlightController.getAllFlights)
+router.get('/getflight/:id',FlightController.getFlightsById)
+router.patch('/getflight/:id',FlightController.updateFlight)
 
 
 module.exports = router
